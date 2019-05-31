@@ -82,7 +82,7 @@ public class Camera1 {
         //矫正方向
         int displayRotation = Camera1Utils.getCameraDisplayOrientation(mCameraInfo, mActivity);
         //设置预览格式
-        mParameters.setPreviewFormat(ImageFormat.YV12);
+        mParameters.setPreviewFormat(ImageFormat.NV21);
         mParameters.setRotation(displayRotation);
         mCamera.setParameters(mParameters);
         mCamera.setDisplayOrientation(displayRotation);
@@ -127,6 +127,10 @@ public class Camera1 {
         });
 
 
+    }
+
+    public Camera.Size getPreviewSize(){
+        return mPreviewSize;
     }
 
 
